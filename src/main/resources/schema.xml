@@ -43,8 +43,7 @@
 			  writeType="0" dbType="mysql" dbDriver="native" switchType="1"  slaveThreshold="100">
 		<heartbeat>select user()</heartbeat>
 		<!-- can have multi write hosts -->
-		<writeHost host="hostM1" url="localhost:3306" user="root"
-				   password="Newspiral@2019">
+		<writeHost host="hostM1" url="localhost:3306" user="root" password="Newspiral@2019">
 			<!-- can have multi read hosts -->
 
 		</writeHost>
@@ -70,8 +69,8 @@
 		<heartbeat> </heartbeat>
 		 <writeHost host="hostM1" url="jdbc:hive2://feng01:10000" user="jifeng" 	password="jifeng"></writeHost> </dataHost> -->
 
-	 <dataHost name="jdbchost" maxCon="1000" minCon="10" balance="0" dbType="mysql"
-		dbDriver="jdbc"> <heartbeat>select user()</heartbeat> <writeHost host="hostM1"
-		url="jdbc:mysql://localhost:3306" user="root" password="Newspiral@2019"> </writeHost>
-		</dataHost>
+<!--	 <dataHost name="jdbchost" maxCon="1000" minCon="10" balance="0" dbType="mysql" dbDriver="jdbc">-->
+<!--		 <heartbeat>select user()</heartbeat>-->
+<!--		 <writeHost host="hostM1" url="localhost:3306" user="root" password="Newspiral@2019"> </writeHost>-->
+<!--		</dataHost>-->
 </mycat:schema>

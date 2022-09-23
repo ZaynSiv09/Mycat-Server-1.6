@@ -79,31 +79,27 @@
 	<!--例如<host host="127.*" user="root"/>-->
 	<!--例如<host host="1*7.*" user="root"/>-->
 	<!--这些配置情况下对于127.0.0.1都能以root账户登录-->
-<!--	<firewall>-->
-<!--	   <whitehost>-->
-<!--	      <host host="192.168.10.*" user="root"/>-->
-<!--	      <host host="192.168.10.2" user="root"/>-->
-<!--	      <host host="192.168.10.3" user="root"/>-->
-<!--	   </whitehost>-->
-<!--       <blacklist check="false">-->
-<!--		   <property name="deleteAllow">false</property>-->
-<!--		   <property name="insertAllow">false</property>-->
-<!--		   <property name="selectAllow">true</property>-->
-<!--       </blacklist>-->
-<!--	</firewall>-->
+	<firewall>
+	   <whitehost>
+
+	      <host host="192.168.10.*" user="mycat"/>
+
+	   </whitehost>
+       <blacklist check="false">
+		   <property name="deleteAllow">false</property>
+		   <property name="insertAllow">false</property>
+		   <property name="selectAllow">true</property>
+       </blacklist>
+	</firewall>
 
 	<user name="mycat" defaultAccount="true">
+		<property name="id">1</property>
 		<property name="password">Newspiral@2019</property>
 		<property name="schemas">testdb</property>
 
 <!--		&lt;!&ndash; 表级 DML 权限设置 &ndash;&gt;-->
 		<privileges check="false">
 			<schema name="TESTDB1" dml="0110" >
-				<table name="userinfo1" dml="0000"></table>
-				<table name="userinfo1" dml="0000"></table>
-			</schema>
-			<schema name="TESTDB2" dml="0110" >
-				<table name="userinfo1" dml="0000"></table>
 				<table name="userinfo1" dml="0000"></table>
 			</schema>
 		</privileges>

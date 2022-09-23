@@ -28,7 +28,7 @@ public class GetZkData implements Watcher {
     public FireWallProperty getNoteSync() throws KeeperException, InterruptedException, IntrospectionException {
 
         try {
-            zooKeeper = new ZooKeeper("172.20.5.150:2181", NumConst.NUM_5000, new GetZkData());
+            zooKeeper = new ZooKeeper("172.20.5.28:2181", NumConst.NUM_5000, new GetZkData());
             //获取firewall并解析
             byte[] firewallData = zooKeeper.getData("/mycat/mycat-cluster-1/server/firewall", false, null);
             String rep = new String(firewallData);
@@ -47,9 +47,9 @@ public class GetZkData implements Watcher {
     public UserPrivilegesConfig getPrivileges() throws KeeperException, InterruptedException, IntrospectionException {
 
         try {
-            zooKeeper = new ZooKeeper("172.20.5.150:2181", NumConst.NUM_5000, new GetZkData());
+            zooKeeper = new ZooKeeper("172.20.5.28:2181", NumConst.NUM_5000, new GetZkData());
             //获取dml并解析
-            byte[] privilegesData = zooKeeper.getData("/mycat/mycat-cluster-1/server/privileges", false, null);
+            byte[] privilegesData = zooKeeper.getData("/mycat/mycat-cluster-1/server/privilege", false, null);
             String rep = new String(privilegesData);
             return new JsonGet().parsePrivilege(rep);
 
